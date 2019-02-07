@@ -14,7 +14,7 @@ class Exam(Entity, Base):
         self.title = title
         self.description = description
 
-class ExamSchema(schema):
+class ExamSchema(Schema):
     id = fields.Number()
     title = fields.Str()
     description = fields.Str()
