@@ -1,8 +1,6 @@
 # coding=utf-8
 from flask import Flask, jsonify, request
-
 from flask_cors import CORS, cross_origin
-
 from .entities.entity import Session, engine, Base
 from .entities.exam import Exam, ExamSchema
 
