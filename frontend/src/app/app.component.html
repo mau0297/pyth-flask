@@ -6,6 +6,10 @@
 <ul>
   <li *ngFor="let exam of examsList">
     {{exam.title}}
+    <ul>
+      <li>{{exam.description}}</li>
+      <li>{{exam.last_updated_by}}</li>
+    </ul>
   </li>
 </ul>
 
