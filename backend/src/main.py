@@ -61,7 +61,9 @@ def add_exam():
 if len(exams) == 0:
     # create and persist dummy exam
     python_exam = Exam("SQLAlchemy Exam", "Test your knowledge about SQLAlchemy.", "script")
+    python_exam2 = Exam("Prueba","Esta es una prueba de sqlAlchemy","Mauricio")
     session.add(python_exam)
+    session.add(python_exam2)
     session.commit()
     session.close()
 
