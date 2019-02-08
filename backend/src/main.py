@@ -1,7 +1,7 @@
 # coding=utf-8
 from flask import Flask, jsonify, request
 
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 from .entities.entity import Session, engine, Base
 from .entities.exam import Exam, ExamSchema
@@ -9,10 +9,9 @@ from .entities.exam import Exam, ExamSchema
 #creating the flask application
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
-# Creating the flask application
-
-app = Flask(__name__)
+#Sapp.config['CORS_HEADERS'] = 'Content-Type'
 
 # if needed, generate database schema
 Base.metadata.create_all(engine)
@@ -27,6 +26,7 @@ session = Session()
 exams = session.query(Exam).all()
 
 @app.route('/exams')
+@cross_origin()
 def get_exams():
     #fetching from databas
     session = Session()
