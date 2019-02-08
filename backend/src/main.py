@@ -73,10 +73,6 @@ if desc is 1:
         session.commit()
         session.close()
 
-
-
-
-
     # reload exams
 exams = session.query(Exam).all()
 """
